@@ -1,0 +1,67 @@
+/* Reset básico */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 200px; /* Ajuste conforme necessário */
+    background-color: #ddd; /* Cor de fundo do slide */
+    text-align: center;
+    line-height: 200px; /* Centraliza o texto verticalmente */
+    font-size: 24px;
+    color: #333;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
