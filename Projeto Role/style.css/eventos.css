@@ -1,67 +1,257 @@
-/* Reset básico */
-body, html {
+/* estilos.css */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo {
+    flex: 1;
     text-align: center;
-    padding: 20px;
-    background-color: #f8f9fa;
+}
+
+.header-right {
+    display: flex;
+    gap: 10px;
 }
 
 .logo img {
-    max-width: 100%;
+    width: 100px; /* Ajuste conforme necessário */
     height: auto;
 }
 
-.slider {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    margin: 20px 0;
-}
-
-.slide {
-    display: none;
-    width: 100%;
-    height: 200px; /* Ajuste conforme necessário */
-    background-color: #ddd; /* Cor de fundo do slide */
-    text-align: center;
-    line-height: 200px; /* Centraliza o texto verticalmente */
-    font-size: 24px;
-    color: #333;
-}
-
-.buttons {
+.nav-links {
     display: flex;
-    justify-content: center;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.search-form {
+    margin: 0 20px;
+}
+
+.search-form input[type="search"] {
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+.auth-buttons {
+    display: flex;
     gap: 10px;
 }
 
 .btn {
-    padding: 10px 20px;
-    border: none;
     background-color: #007bff;
+    border: none;
     color: white;
-    font-size: 16px;
+    padding: 10px 20px;
+    margin: 0;
     cursor: pointer;
+    font-size: 16px;
     border-radius: 5px;
+}
+
+.login-btn {
+    background-color: #007bff;
+}
+
+.signup-btn {
+    background-color: #ffc107;
 }
 
 .btn:hover {
     background-color: #0056b3;
 }
 
-/* Responsividade */
+/* Slider */
+.slider {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 200px;
+    background-color: #f0f0f0;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide {
+    flex: 1;
+    min-width: 100%;
+    text-align: center;
+    line-height: 200px;
+    font-size: 24px;
+    background-color: #ddd;
+}
+
+/* Responsivo */
 @media (max-width: 768px) {
-    .buttons {
-        flex-direction: column;
+    .logo img {
+        width: 80px;
+    }
+
+    .slider {
+        height: 150px;
+    }
+
+    .slide {
+        font-size: 20px;
+        line-height: 150px;
     }
 
     .btn {
-        width: 100%;
-        margin-bottom: 10px;
+        padding: 8px 16px;
+        font-size: 14px;
     }
+
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin: 10px 0;
+        gap: 10px;
+    }
+
+    .search-form {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        width: 60px;
+    }
+
+    .slider {
+        height: 100px;
+    }
+
+    .slide {
+        font-size: 18px;
+        line-height: 100px;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .btn img {
+        width: 108px;
+        height: 52px;
+        /* display: block; */
+        border: none;
+        background: none;
+    }
+}
+
+
+
+/* Estilo para o conteúdo principal da página */
+main {
+    padding: 20px;
+}
+
+/* Estilo para a barra de navegação inferior */
+#bottom-nav {
+    display: flex;
+    justify-content: space-around; /* Distribui os botões igualmente */
+    align-items: center; /* Alinha verticalmente no centro */
+    position: fixed; /* Fixa a barra na parte inferior da tela */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #333; /* Cor de fundo da barra de navegação */
+    border-top: 1px solid #444; /* Borda superior sutil */
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+/* Estilo para os botões da barra de navegação */
+.nav-button {
+    background: none; /* Remove o fundo do botão */
+    border: none; /* Remove a borda do botão */
+    color: #fff; /* Define a cor do texto e ícones */
+    display: flex;
+    flex-direction: column; /* Empilha ícone e texto verticalmente */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    font-size: 12px; /* Tamanho da fonte para o texto */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+}
+
+/* Estilo para os ícones */
+.nav-button svg {
+    fill: currentColor; /* Usa a cor do texto para o ícone */
+    width: 24px;
+    height: 24px;
+}
+
+/* Estilo para o texto dos botões */
+.nav-button span {
+    margin-top: 4px; /* Espaço entre o ícone e o texto */
+}
+
+
+
+/* Estilo para a seção de botões */
+.buttons {
+    display: flex;
+    justify-content: space-around; /* Distribui os botões igualmente */
+    align-items: center; /* Alinha verticalmente no centro */
+    padding: 20px; /* Espaço interno */
+}
+
+/* Estilo para os botões */
+.btn {
+    background: none; /* Remove o fundo padrão do botão */
+    border: none; /* Remove a borda padrão do botão */
+    padding: 0; /* Remove o padding padrão */
+    cursor: pointer; /* Muda o cursor para um ponteiro ao passar sobre o botão */
+    display: flex;
+    flex-direction: column; /* Empilha ícone e texto verticalmente */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    font-size: 12px; /* Tamanho da fonte para o texto */
+    outline: none; /* Remove o contorno padrão ao focar */
+}
+
+/* Estilo para as imagens dos botões */
+.btn img {
+    width: 108px;
+    height: 52px;
+    /* display: block; */
+    border: none;
+    background: none;
+}
+
+/* Estilo para o texto dos botões */
+.btn span {
+    margin-top: 4px; /* Espaço entre o ícone e o texto */
+    color: #333; /* Cor do texto */
 }
